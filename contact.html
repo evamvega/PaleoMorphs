@@ -1,34 +1,194 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Paleo Morphs Reptiles</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #000;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #111;
+      padding: 1rem;
+      text-align: center;
+    }
+    header img {
+      max-width: 150px;
+    }
+    nav {
+      background-color: #222;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 1rem 0;
+    }
+    nav a {
+      color: #ccc;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #00cc99;
+    }
+    main {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+      flex: 1;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #00cc99;
+      text-align: center;
+    }
+    p, ul {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "\2022";
+      color: #00cc99;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .gallery a {
+      display: block;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    form {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form label {
+      font-weight: bold;
+    }
+    form input,
+    form textarea,
+    form button {
+      font-family: inherit;
+      font-size: 1rem;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    form input,
+    form textarea {
+      width: 100%;
+      background-color: #222;
+      color: #eee;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    form button {
+      background-color: #00cc99;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #00b388;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #888;
+    }
+    @media (max-width: 600px) {
+      nav a {
+        margin: 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Reptile World</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="lizards.html">Lizards</a>
-      <a href="snakes.html">Snakes</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+    <img src="logo.png" alt="Paleo Morphs Reptiles Logo">
   </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
   <main>
+    <h1>Contact Us</h1>
+    <p>If you have any questions, feel free to reach out!</p>
+    <ul>
+      <li>Email: info@paleomorphs.com</li>
+      <li>Phone: (555) 123-4567</li>
+      <li>Location: 123 Reptile Lane, Herpetology City, USA</li>
+    </ul>
+    <form action="#" method="post">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
 
-<section>
-  <h2>Contact Us</h2>
-  <p>Email: info@reptileworld.com</p>
-  <p>Phone: (555) 123-4567</p>
-</section>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+    <div class="gallery">
+      <a href="reptile1.jpg" data-lightbox="reptiles" data-title="Reptile 1">
+        <img src="reptile1.jpg" alt="Reptile Image 1">
+      </a>
+      <a href="reptile2.jpg" data-lightbox="reptiles" data-title="Reptile 2">
+        <img src="reptile2.jpg" alt="Reptile Image 2">
+      </a>
+      <a href="reptile3.jpg" data-lightbox="reptiles" data-title="Reptile 3">
+        <img src="reptile3.jpg" alt="Reptile Image 3">
+      </a>
+    </div>
   </main>
   <footer>
-    <p>&copy; 2025 Reptile World. All rights reserved.</p>
+    <p>&copy; 2025 Paleo Morphs Reptiles. All rights reserved.</p>
   </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
